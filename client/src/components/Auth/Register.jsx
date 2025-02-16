@@ -25,7 +25,7 @@ function Register() {
     setError('');
 
     try {
-      await axios.post('http://localhost:5000/api/auth/register', formData);
+      await axios.post('https://todo-mern-b9cdb3huc7aqd8b2.southindia-01.azurewebsites.net/api/auth/register', formData);
       navigate('/login');
     } catch (err) {
       setError(err.response?.data?.error || 'Registration failed. Please try again.');

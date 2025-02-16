@@ -21,7 +21,7 @@ function TodoList() {
   const fetchTodos = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:5000/api/todos', { headers });
+      const response = await axios.get('https://todo-mern-b9cdb3huc7aqd8b2.southindia-01.azurewebsites.net/api/todos', { headers });
       setTodos(response.data);
     } catch (err) {
       setError('Failed to fetch todos');
@@ -36,7 +36,7 @@ function TodoList() {
 
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/todos',
+        'https://todo-mern-b9cdb3huc7aqd8b2.southindia-01.azurewebsites.net/api/todos',
         { text: newTodo },
         { headers }
       );
@@ -52,7 +52,7 @@ function TodoList() {
 
     try {
       await axios.put(
-        `http://localhost:5000/api/todos/${id}`,
+        `https://todo-mern-b9cdb3huc7aqd8b2.southindia-01.azurewebsites.net/api/todos/${id}`,
         { text: editText },
         { headers }
       );
@@ -69,7 +69,7 @@ function TodoList() {
   const toggleTodo = async (id, completed) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/todos/${id}`,
+        `https://todo-mern-b9cdb3huc7aqd8b2.southindia-01.azurewebsites.net/api/todos/${id}`,
         { completed: !completed },
         { headers }
       );
@@ -83,7 +83,7 @@ function TodoList() {
 
   const deleteTodo = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/todos/${id}`, { headers });
+      await axios.delete(`https://todo-mern-b9cdb3huc7aqd8b2.southindia-01.azurewebsites.net/api/todos/${id}`, { headers });
       setTodos(todos.filter((todo) => todo._id !== id));
     } catch (err) {
       setError('Failed to delete todo');

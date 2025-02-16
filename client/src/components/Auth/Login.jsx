@@ -26,7 +26,7 @@ function Login() {
     setError('');
 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', formData);
+      const response = await axios.post('https://todo-mern-b9cdb3huc7aqd8b2.southindia-01.azurewebsites.net/api/auth/login', formData);
       localStorage.setItem('token', response.data.token);
       navigate('/todos');
     } catch (err) {
